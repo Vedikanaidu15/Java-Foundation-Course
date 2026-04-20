@@ -1,0 +1,19 @@
+public class IndexFinder{
+	public void printIndex (int[] intArr, int element){
+
+		for(int i=0; i< intArr.length; i++){
+			if(intArr[i] == element){
+				System.out.println(i);
+			}
+		}
+	}
+	public static void main(String[] args){
+		int element =Integer.parseInt(args[args.length - 1]);
+		int[] intArr = new int[args.length - 1];
+		for(int i=0; i<args.length-1; i++){
+			intArr[i] = Integer.parseInt(args[i]);
+		}
+		IndexFinder obj = new IndexFinder();
+		obj.printIndex(intArr,element);
+	}
+}
