@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+@FunctionalInterface
+interface CalculateOperation {
+	double calculate(double x, double y);
+}// write your code
+
+public class CalculateMain {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("First number: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Second number: ");
+        double b = scanner.nextDouble();
+
+        // Lambda expression for subtraction
+        CalculateOperation subtraction = (x, y) -> x - y;
+
+        // Lambda expression for division
+        CalculateOperation division = (x, y) -> x / y;
+           
+
+        double subtractionResult = subtraction.calculate(a, b);
+        double divisionResult = division.calculate(a, b);
+
+        System.out.println("Subtraction Result: " + subtractionResult);
+        System.out.println("Division Result: " + divisionResult);
+
+        scanner.close();
+    }
+}
